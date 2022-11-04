@@ -1,5 +1,6 @@
 import IService from '../interfaces/IService';
-import { IProduct  } from '../interfaces/IProduct';
+import { IProduct} from '../interfaces/IProduct';
+import ProductZodSchema from '../interfaces/IProduct';
 import { IModel } from '../interfaces/IModel';
 import { ErrorTypes } from '../errors/catalog';
 
@@ -15,6 +16,15 @@ class ProductService implements IService<IProduct> {
     if (!allProducts) throw new Error(ErrorTypes.EntityNotFound);
     return allProducts;
   }
+
+  public async create(obj:unknown):Promise<IProduct> {
+    const parsed = ProductZodSchema.safeParse(obj);
+    if (!parsed.success) {
+      throw new Error(ErrorTypes.EntityNotFound);
+    }
+    return this._product.create(parsed.data);
+  }
+
 }
 
 export default ProductService;

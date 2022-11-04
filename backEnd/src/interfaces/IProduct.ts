@@ -15,10 +15,10 @@ const ProductZodSchema = z.object({
   }).min(3, { message: 'Description must be 3 or more characters long' }),
   created: z.date({
     invalid_type_error: 'created must be a date',
-  }), 
+  }).optional(), 
   updated: z.date({
     invalid_type_error: 'updated must be a date',
-  }),
+  }).optional(),
 });
 
 export type IProduct = z.infer<typeof ProductZodSchema>;

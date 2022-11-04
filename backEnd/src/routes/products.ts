@@ -10,5 +10,6 @@ const productService = new ProductService(product);
 const productController = new ProductsController(productService);
 
 productRoute.get('/produtos', (req, res) => productController.read(req, res));
+productRoute.post('/produtos', (req, res) => productController.create(req, res));
 
 export default productRoute;
