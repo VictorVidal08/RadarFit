@@ -20,4 +20,14 @@ export default class ProductController {
     const created = await this._service.create(req.body);
     return res.status(201).json(created);
   }
+
+  public async readOne(
+    req: Request,
+    res: Response<IProduct>,
+  ) {
+    const { id } = req.params;
+    // console.log(id.length);
+    const result = await this._service.readOne(id);
+    return res.status(200).json(result);
+  }
 }

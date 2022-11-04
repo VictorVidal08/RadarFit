@@ -11,5 +11,6 @@ const productController = new ProductsController(productService);
 
 productRoute.get('/produtos', (req, res) => productController.read(req, res));
 productRoute.post('/produtos', (req, res) => productController.create(req, res));
+productRoute.get('/produtos/:id', (req, res) => productController.readOne(req, res));
 
 export default productRoute;

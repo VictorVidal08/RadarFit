@@ -25,6 +25,12 @@ class ProductService implements IService<IProduct> {
     return this._product.create(parsed.data);
   }
 
+  public async readOne(_id:string):Promise<IProduct> {
+    if (_id.length < 24) throw new Error(ErrorTypes.InvalidMongoId);
+    const product = await this._product.readOne(_id);
+    if (!product) throw new Error(ErrorTypes.ObjectNotFound);
+    return product;
+  }
 }
 
 export default ProductService;
