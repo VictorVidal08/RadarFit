@@ -40,4 +40,13 @@ export default class ProductController {
     const updated = await this._service.update(id, body);
     return res.status(200).json(updated);
   }
+
+  public async delete(
+    req: Request,
+    res: Response<IProduct>,
+  ) {
+    const { id } = req.params;
+    await this._service.delete(id);
+    return res.status(204).end();
+  }
 }

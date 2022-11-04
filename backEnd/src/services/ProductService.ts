@@ -49,6 +49,13 @@ class ProductService implements IService<IProduct> {
 
     return updated;
   }
+
+  public async delete(_id:string):Promise<IProduct> {
+    if (_id.length < 24) throw new Error(ErrorTypes.InvalidMongoId);
+    const product = await this._product.delete(_id);
+    if (!product) throw new Error(ErrorTypes.ObjectNotFound);
+    return product;
+  }
 }
 
 export default ProductService;
