@@ -21,8 +21,8 @@
     ],
     "parserOptions": {
         "ecmaVersion": 2019,
-        "sourceType": "module",
-        "project": "./tsconfig.json"
+        "sourceType": "module"
+        // "project": "./tsconfig.json",
     },
     "plugins": ["@typescript-eslint", "sonarjs", "editorconfig", "mocha"],
     "rules": {
