@@ -1,0 +1,34 @@
+// use radarfit;
+
+// db.products.insertMany([{
+//     "produto": "celular",
+//     "valor": 2200,
+//     "descricao": "o top do momento",
+//     "created":   01/01/2021,
+//     "updated":   01/01/2021
+// },
+// {
+//     "produto": "esteira",
+//     "valor": 4000,
+//     "descricao": "corre sozinha",
+//     "created":   01/01/2021,
+//     "updated":   01/01/2021
+// },
+// {
+//     "produto": "alexa",
+//     "valor": 500,
+//     "descricao": "companheira",
+//     "created":   01/01/2021,
+//     "updated":   01/01/2021
+// },
+// ]);
+
+// db.products.insertOne({
+//     "produto": "halter 1200kg",
+//     "valor": 1200,
+//     "descricao": "pesado demais",
+//     "created":   01/01/2021,
+//     "updated":   01/01/2021
+// });
+
+db.products.find();
