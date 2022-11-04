@@ -31,6 +31,24 @@ class ProductService implements IService<IProduct> {
     if (!product) throw new Error(ErrorTypes.ObjectNotFound);
     return product;
   }
+
+  public async update(_id: string, obj: object): Promise<IProduct> {
+    let now = new Date().toISOString();
+    const newObj = { ...obj, updated: new Date(now) }
+    const parsed = ProductZodSchema.safeParse(newObj);
+
+    if (!parsed.success) {
+      throw parsed.error;
+    }
+
+    const updated = await this._product.update(_id, parsed.data);
+
+    if (!updated) {
+      throw new Error(ErrorTypes.ObjectNotFound);
+    }
+
+    return updated;
+  }
 }
 
 export default ProductService;
