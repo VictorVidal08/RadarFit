@@ -4,6 +4,7 @@ interface IService<T> {
     readOne(_id:string):Promise<T>,
     update(_id: string, obj: unknown):Promise<T>,
     delete(_id:string):Promise<T>,
+    readByQuery(search: string): any
   }
     
   export default IService;

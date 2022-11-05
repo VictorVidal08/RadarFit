@@ -9,6 +9,7 @@ const product = new ProductsModel();
 const productService = new ProductService(product);
 const productController = new ProductsController(productService);
 
+productRoute.get('/produtos/find', (req, res) => productController.readByQuery(req, res));
 productRoute.get('/produtos', (req, res) => productController.read(req, res));
 productRoute.post('/produtos', (req, res) => productController.create(req, res));
 productRoute.get('/produtos/:id', (req, res) => productController.readOne(req, res));

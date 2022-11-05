@@ -38,6 +38,10 @@ abstract class MongoModel<T> implements IModel<T> {
 
     return this._model.findOneAndDelete({ _id });
   }
+
+  public async readByQuery(search: string):Promise<T[]> {
+    return this._model.find({ "produto": { $regex: search } });
+  }
 }
 
 export default MongoModel;

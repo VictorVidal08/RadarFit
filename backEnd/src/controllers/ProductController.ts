@@ -67,4 +67,15 @@ export default class ProductController {
     const updated = await this._service.update(id, user);
     return res.status(200).json(updated);
   }
+
+  public async readByQuery(
+    req: Request,
+    res: Response<IProduct[] | null>,
+  ) {
+    const search = req.query;
+    const { q } = search;
+    if (!q) return res.status(500).end();
+    const result = await this._service.readByQuery(q as string);
+    return res.status(200).json(result);
+  }
 }

@@ -56,6 +56,14 @@ class ProductService implements IService<IProduct> {
     if (!product) throw new Error(ErrorTypes.ObjectNotFound);
     return product;
   }
+
+  public async readByQuery(search: string){
+    const matchProducts = await this._product.readByQuery(search);
+    if (!matchProducts) throw new Error(ErrorTypes.EntityNotFound);
+    console.log(matchProducts);
+    return matchProducts;
+  }
+
 }
 
 export default ProductService;
