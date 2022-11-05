@@ -8,7 +8,7 @@ const ProductZodSchema = z.object({
   valor: z.number({
     required_error: 'Value is required',
     invalid_type_error: 'Value must be a number',
-  }).int().gte(10).lte(10000),
+  }).gte(1).lte(100000),
   descricao: z.string({
     required_error: 'Description is required',
     invalid_type_error: 'Description must be a string',
