@@ -2,10 +2,10 @@
   "name": "radarfit",
   "version": "1.0.0",
   "description": "technical test",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "node index.js",
+    "start": "tsnd src/index.js",
     "dev": "tsnd src/index.ts",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "test": "jest -i --forceExit --verbose",
