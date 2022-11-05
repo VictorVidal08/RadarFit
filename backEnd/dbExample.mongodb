@@ -32,3 +32,5 @@
 // });
 
 db.products.find();
+
+// mongodb+srv://victorvidal:<password>@radarfit.stw3ckx.mongodb.net/test
