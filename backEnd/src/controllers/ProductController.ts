@@ -49,4 +49,22 @@ export default class ProductController {
     await this._service.delete(id);
     return res.status(204).end();
   }
+
+  public async updateOne(
+    req: Request,
+    res: Response<IProduct>,
+  ) {
+    const { id } = req.params;
+    const user = req.body;
+    const actualData = await this._service.readOne(id);
+    if(!user.produto) {
+      user.produto = actualData.produto;
+    } else if (!user.valor) {
+      user.valor = actualData.valor;
+    } else if (!user.descricao) {
+      user.descricao = actualData.descricao;
+    }
+    const updated = await this._service.update(id, user);
+    return res.status(200).json(updated);
+  }
 }
