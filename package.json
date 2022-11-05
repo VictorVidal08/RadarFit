@@ -4,7 +4,8 @@
   "description": "technical test",
   "main": "index.js",
   "scripts": {
-    "start": "tsnd src/index",
+    "start": "node build/index.js",
+    "postinstall": "tsc",
     "dev": "tsnd src/index.ts",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "test": "jest -i --forceExit --verbose",
