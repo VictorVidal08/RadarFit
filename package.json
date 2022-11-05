@@ -4,7 +4,7 @@
   "description": "technical test",
   "main": "index.js",
   "scripts": {
-    "start": "tsnd src/index.ts",
+    "start": "tsnd src/index",
     "dev": "tsnd src/index.ts",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "test": "jest -i --forceExit --verbose",
