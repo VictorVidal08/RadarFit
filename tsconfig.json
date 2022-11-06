@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es2019",
     "module": "commonjs",
-    "sourceMap": true,
+    "sourceMap": true,                     
     "outDir": "./build",
     "rootDir": "./src",
     "strict": true,
@@ -15,7 +15,7 @@
     "strictPropertyInitialization": false,
     "skipLibCheck": true,
     "paths": {
-      "": ["node_modules/"]
+      "*": ["node_modules/*"]
     }
   },
   "include": ["src/**/*"],
