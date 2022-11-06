@@ -1,4 +1,5 @@
 import * as express from 'express';
+import 'dotenv/config';
 import 'express-async-errors';
 import productRouter from './routes/products';
 

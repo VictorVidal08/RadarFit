@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const express = require("express");
+require("dotenv/config");
 require("express-async-errors");
 const products_1 = require("./routes/products");
 const app = express();
