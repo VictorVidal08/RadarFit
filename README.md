@@ -4,7 +4,9 @@
 - ODM (Object Document Mapping) Mongoose para trabalhar com o banco de dados MongoDB;
 - Utilização de POO; 
 
-A utilização de classe abstrata se deu afim de permitir a construção de um código de fácil expansão.
+- A utilização de classe abstrata se deu afim de permitir a construção de um código de fácil expansão.
+
+- A data de criação de um novo produto e a de update são atualizadas automaticamente, ao inserir e ao editar um produto, respectivamente.
 
 # Como rodar a aplicação
 
