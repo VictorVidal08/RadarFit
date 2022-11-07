@@ -2,7 +2,7 @@
   "name": "radarfit",
   "version": "1.0.0",
   "description": "technical test",
-  "main": "api/index.ts",
+  "main": "build/index.js",
   "engines": {
     "node": "16.x"
   },
